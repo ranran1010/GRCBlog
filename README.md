@@ -1,2 +1,2 @@
-# ITBlog
+# GRCBlog
 Blog
