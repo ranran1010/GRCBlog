@@ -1,11 +1,13 @@
 package com.grc.entity;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 /**
  * Created by 14437 on 2017/6/20.
  */
+@Entity
 public class ItClassify {
     @Id
     @GeneratedValue

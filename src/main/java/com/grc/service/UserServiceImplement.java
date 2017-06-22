@@ -27,7 +27,7 @@ public class UserServiceImplement implements UserService {
         //同时为了保证user表与userDetail的一一映射，先插入user，然后获取到userId赋值给userDetail以确保正常
         userRepository.save(user);
         User user1 = userRepository.findByUserName(user.getUserName());
-        System.out.println("-----"+userDetail.getPhone());
+        //System.out.println("-----"+userDetail.getPhone());
         userDetail.setUserId(user1.getUserId());
         userDetailRepository.save(userDetail);
     }

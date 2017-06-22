@@ -13,10 +13,10 @@ public class Blog {
     @Id
     @GeneratedValue
     private Integer blogId;
-    private String userId;
+    private Integer userId;
     private String title;
     private String blogContent;
-    private int classifyId;
+    private Integer classifyId;
     private Integer itClassifyId;
     private String tags;
     private Timestamp publishTime;
@@ -31,11 +31,11 @@ public class Blog {
         this.blogId = blogId;
     }
 
-    public String getUserId() {
+    public Integer getUserId() {
         return userId;
     }
 
-    public void setUserId(String userId) {
+    public void setUserId(Integer userId) {
         this.userId = userId;
     }
 
@@ -59,7 +59,7 @@ public class Blog {
         return classifyId;
     }
 
-    public void setClassifyId(int classifyId) {
+    public void setClassifyId(Integer classifyId) {
         this.classifyId = classifyId;
     }
 
