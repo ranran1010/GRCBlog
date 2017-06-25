@@ -23,7 +23,7 @@ public class Upload {
     private Integer downNum;
     private Integer score;
 
-    private Upload(){}
+    public Upload(){}
 
     public Integer getFileId() {
         return fileId;

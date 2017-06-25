@@ -24,6 +24,11 @@ public class BlogController {
     @Autowired
     BlogService blogService;
 
+    /**
+     * 获取用户的所有博客
+     * @param userId
+     * @return
+     */
     @PostMapping(value = "/getUserBlogs")
     public Map<String,Object> getUserBlogs(@RequestParam("userId")Integer userId){
         String result = "";
@@ -34,6 +39,11 @@ public class BlogController {
         return response;
     }
 
+    /**
+     * 根据博客Id获取博客
+     * @param blogId
+     * @return
+     */
     @PostMapping(value = "/getBlog")
     public Map<String,Object> getBlog(@RequestParam("blogId")Integer blogId){
         String result = "";
@@ -44,12 +54,22 @@ public class BlogController {
         return response;
     }
 
+    /**
+     * 添加博客
+     * @param userId
+     * @param title
+     * @param blogContent
+     * @param classifyId
+     * @param itClassifyId
+     * @param tags
+     * @return
+     */
     @PostMapping(value = "/addBlog")
     public Map<String,Object> addBlog(@RequestParam("userId")Integer userId,
                                       @RequestParam("title")String title,
                                       @RequestParam("blogContent")String blogContent,
                                       @RequestParam("classifyId")Integer classifyId,
-                                      @RequestParam("ItClassifyId")Integer itClassifyId,
+                                      @RequestParam("itClassifyId")Integer itClassifyId,
                                       @RequestParam("tags")String tags){
         Blog blog = new Blog();
         blog.setUserId(userId);
@@ -66,13 +86,24 @@ public class BlogController {
         return response;
     }
 
+    /**
+     * 更新博客
+     * @param blogId
+     * @param userId
+     * @param title
+     * @param blogContent
+     * @param classifyId
+     * @param itClassifyId
+     * @param tags
+     * @return
+     */
     @PostMapping(value = "/updateBlog")
-    public Map<String,Object> updateBlog(@RequestParam("userId")Integer blogId,
+    public Map<String,Object> updateBlog(@RequestParam("blogId")Integer blogId,
                                          @RequestParam("userId")Integer userId,
                                          @RequestParam("title")String title,
                                          @RequestParam("blogContent")String blogContent,
                                          @RequestParam("classifyId")Integer classifyId,
-                                         @RequestParam("ItClassifyId")Integer itClassifyId,
+                                         @RequestParam("itClassifyId")Integer itClassifyId,
                                          @RequestParam("tags")String tags){
         Blog blog = new Blog();
         blog.setBlogId(blogId);
@@ -89,6 +120,12 @@ public class BlogController {
         response.put("updateResult","success");
         return response;
     }
+
+    /**
+     * 删除博客
+     * @param blogId
+     * @return
+     */
 
     @PostMapping(value = "/deleteBlog")
     public Map<String,Object> deleteBlog(@RequestParam("blogId")Integer blogId){

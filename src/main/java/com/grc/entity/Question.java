@@ -3,6 +3,7 @@ package com.grc.entity;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import java.sql.Timestamp;
 
 /**
  * Created by 14437 on 2017/6/20.
@@ -13,8 +14,9 @@ public class Question {
     @GeneratedValue
     private Integer questionId;
     private Integer userId;
+    private String title;
     private String questionContent;
-    private String publishTime;
+    private Timestamp publishTime;
     private Integer answerNum;
     private Integer score;
     private Integer state;
@@ -38,6 +40,14 @@ public class Question {
         this.userId = userId;
     }
 
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
     public String getQuestionContent() {
         return questionContent;
     }
@@ -46,11 +56,11 @@ public class Question {
         this.questionContent = questionContent;
     }
 
-    public String getPublishTime() {
+    public Timestamp getPublishTime() {
         return publishTime;
     }
 
-    public void setPublishTime(String publishTime) {
+    public void setPublishTime(Timestamp publishTime) {
         this.publishTime = publishTime;
     }
 

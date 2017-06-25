@@ -9,24 +9,24 @@ import java.sql.Timestamp;
  * Created by 14437 on 2017/6/20.
  */
 @Entity
-public class LeaveWords {
+public class LeaveWord {
     @Id
     @GeneratedValue
-    private Integer wordsId;
+    private Integer wordId;
     private Integer blogId;
     private Integer userId;
     private String leaveContent;
     private Integer answerId;
     private Timestamp leaveTime;
 
-    public LeaveWords(){}
+    public LeaveWord(){}
 
-    public Integer getWordsId() {
-        return wordsId;
+    public Integer getWordId() {
+        return wordId;
     }
 
-    public void setWordsId(Integer wordsId) {
-        this.wordsId = wordsId;
+    public void setWordId(Integer wordId) {
+        this.wordId = wordId;
     }
 
     public Integer getBlogId() {
